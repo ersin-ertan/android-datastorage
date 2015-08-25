@@ -6,7 +6,8 @@ import com.sora.util.akatsuki.Retained;
 // showcasing inheritance
 public class MyBean extends RootBean{
 	public MyBean(){super();}
-//	@Retained public String retainedChild = "retained in child";
+	// inheritance works if at least one @Retained field is in child
+	@Retained public String retainedChild = "retained in child";
 }
 
 

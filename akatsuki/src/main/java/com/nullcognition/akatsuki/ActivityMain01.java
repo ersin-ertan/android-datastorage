@@ -18,14 +18,6 @@ public class ActivityMain01 extends Activity{
 	@Retained            MyBean   bean;
 	@Retained boolean retainSaveValues = false;
 
-	@OnClick(R.id.button) void saveValuesFromWithinActivityOverwrittingSerializedValues(){
-		retainSaveValues = true;
-		bean.retained = "bean.retain from within activity via save";
-		bean.retainedProtected = "bean.retainPro from within activity via save";
-//		bean.retainedChild = "bean.retainChild from with activity via save";
-		textView.setText("saved - rotate to see values from save instead of the deserialize from intent extra");
-	}
-
 	@Override
 	protected void onCreate(final Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -39,21 +31,29 @@ public class ActivityMain01 extends Activity{
 			bean = new MyBean();
 			Akatsuki.restore(this, savedInstanceState);
 			textView.setText(bean.retained + "\n" + bean.retainedProtected + "\n"
-//					+ bean.retainedChild
+					+ bean.retainedChild
 			);
 		}
 
 		if(!retainSaveValues){
 			if(null != getIntent()){
 				if(null != getIntent().getExtras()){ // intent extras are persistent after rotations
-					MyBean bean = Akatsuki.deserialize(new MyBean(), getIntent().getExtras());
+					bean = Akatsuki.deserialize(new MyBean(), getIntent().getExtras());
 					textView.setText(bean.retained + " \n" + bean.retainedProtected + " \n" +
-//							bean.retainedChild + " \n" +
+							bean.retainedChild + " \n" +
 							"bean.notRetained:" + bean.notRetained + "\n" +
 							" bean.notRetained_debug:" + bean.notRetained_forDebugging);
 				}
 			}
 		}
+	}
+
+	@OnClick(R.id.button) void saveValuesFromWithinActivityOverwrittingSerializedValues(){
+		retainSaveValues = true;
+		bean.retained = "bean.retain from within activity via save";
+		bean.retainedProtected = "bean.retainPro from within activity via save";
+		bean.retainedChild = "bean.retainChild from with activity via save";
+		textView.setText("saved - rotate to see values from save instead of the deserialize from intent extra");
 	}
 
 	@Override protected void onSaveInstanceState(final Bundle outState){

@@ -41,7 +41,7 @@ public class ActivityMainFragment extends Fragment{
 		MyBean bean = new MyBean();
 		bean.retained = "bean.retained via serialization";
 		bean.retainedProtected = "bean.retainedProtected via serialization";
-//		bean.retainedChild = "bean.retainedChild via serialization";
+		bean.retainedChild = "bean.retainedChild via serialization";
 		bean.notRetained = 1;
 		bean.notRetained_forDebugging = 2;
 		Bundle bundle = Akatsuki.serialize(bean);
