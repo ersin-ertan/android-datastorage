@@ -5,5 +5,5 @@ import com.sora.util.akatsuki.Retained;
 
 
 public class AnnotatedType{
-	@Retained int i;
+	@Retained String string = "AnnotatedType.string - Click to retain";
 }

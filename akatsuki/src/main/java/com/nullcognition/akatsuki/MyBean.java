@@ -5,8 +5,8 @@ import com.sora.util.akatsuki.Retained;
 
 public class MyBean{
 
-	@Retained public       int    retained;
-	@Retained              int    retainedProtected;
-//	transient              int    notRetained;
-//	@Retained(skip = true) String notRetained_forDebugging;
+	@Retained public       String retained = "bean.retained default";
+	@Retained              String retainedProtected = "bean.retainedPro default";
+	transient              int    notRetained;
+	@Retained(skip = true) int    notRetained_forDebugging;
 }

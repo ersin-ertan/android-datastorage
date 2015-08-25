@@ -15,14 +15,25 @@
 		android:layout_height = "wrap_content"
 		android:layout_width = "wrap_content"
 		android:text = "@string/hello_world"
+		android:layout_alignParentEnd = "true"
+		android:layout_alignParentStart = "true"
 		/>
 
 	<TextView
 		android:layout_width = "wrap_content"
 		android:layout_height = "wrap_content"
 		android:text = "New Text"
-		android:id = "@+id/txt_retainedAnntatedType"
+		android:id = "@+id/txt_retainedAnnotatedType"
 		android:layout_below = "@+id/txt_retainedField" android:layout_alignParentStart = "true"
+		android:layout_alignParentEnd = "true"
+		/>
+
+	<Button
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:text = "Start Activity - Serialize/Pass values"
+		android:id = "@+id/btn_passValueToActivity"
+		android:layout_below = "@+id/txt_retainedAnnotatedType" android:layout_alignParentStart = "true"
 		/>
 
 </RelativeLayout>
