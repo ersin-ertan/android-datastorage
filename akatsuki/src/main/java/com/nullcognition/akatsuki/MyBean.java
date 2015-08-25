@@ -4,10 +4,13 @@ package com.nullcognition.akatsuki;
 import com.sora.util.akatsuki.Retained;
 
 // showcasing inheritance
-public class MyBean extends RootBean{
+public class MyBean<T extends String> extends RootBean{
+
 	public MyBean(){super();}
+
 	// inheritance works if at least one @Retained field is in child
 	@Retained public String retainedChild = "retained in child";
+	@Retained public T retainedGeneric;
 }
 
 
