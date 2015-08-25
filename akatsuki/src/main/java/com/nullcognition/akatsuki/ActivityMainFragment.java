@@ -10,31 +10,37 @@ import android.widget.TextView;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 
-/**
- A placeholder fragment containing a simple view.
- */
+import butterknife.Bind;
+import butterknife.BindString;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+
 public class ActivityMainFragment extends Fragment{
 
-	@Retained
-	String myString = "old String";
-	TextView tv;
+	@Retained AnnotatedType at;
+	@Retained // annotation order does not matter
+	@BindString(R.string.defaultString)
+	String myString;
 
-	public ActivityMainFragment(){
+	@Bind(R.id.txt_retainedAnntatedType) TextView txtVRetainedAnnotatedType;
+	@Bind(R.id.txt_retainedField)        TextView textView;
+
+	@OnClick(R.id.txt_retainedField) void clickText(){
+		at.i = 99;
+		myString = "tobe retained annotatedType set:99";
+		textView.setText(myString);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		View rootView = inflater.inflate(R.layout.fragment_activity_main, container, false);
-		Akatsuki.restore(this, savedInstanceState);
-		tv = (TextView) rootView.findViewById(R.id.textView);
-		tv.setText(myString);
-		tv.setOnClickListener(new View.OnClickListener(){
-			@Override public void onClick(final View v){
-				myString = "new String";
-				tv.setText(myString);
-			}
-		});
 
+		ButterKnife.bind(this, rootView); // binding and restoration order matters
+		at = new AnnotatedType();
+		Akatsuki.restore(this, savedInstanceState);
+
+		txtVRetainedAnnotatedType.setText("annotated type i:" + at.i);
+		textView.setText(myString);
 		return rootView;
 	}
 
@@ -42,4 +48,6 @@ public class ActivityMainFragment extends Fragment{
 		super.onSaveInstanceState(outState);
 		Akatsuki.save(this, outState);
 	}
+
+	public ActivityMainFragment(){}
 }
