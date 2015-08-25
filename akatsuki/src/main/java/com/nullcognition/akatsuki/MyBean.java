@@ -3,10 +3,11 @@ package com.nullcognition.akatsuki;
 
 import com.sora.util.akatsuki.Retained;
 
-public class MyBean{
-
-	@Retained public       String retained = "bean.retained default";
-	@Retained              String retainedProtected = "bean.retainedPro default";
-	transient              int    notRetained;
-	@Retained(skip = true) int    notRetained_forDebugging;
+// showcasing inheritance
+public class MyBean extends RootBean{
+	public MyBean(){super();}
+//	@Retained public String retainedChild = "retained in child";
 }
+
+
+
