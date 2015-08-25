@@ -29,18 +29,23 @@ public class ActivityMain01 extends Activity{
 		// which ends up being overwritten by the deserialize
 		if(null != savedInstanceState){
 			bean = new MyBean<>();
+			bean.model = new MyBean.Model();
 			Akatsuki.restore(this, savedInstanceState);
 			textView.setText(bean.retained + "\n" + bean.retainedProtected + "\n"
-							+ bean.retainedChild + "\n" + bean.retainedGeneric
+							+ bean.retainedChild + "\n" + bean.retainedGeneric + "\n"
+							+ bean.model.name
 			);
 		}
 
 		if(!retainSaveValues){
 			if(null != getIntent()){
 				if(null != getIntent().getExtras()){ // intent extras are persistent after rotations
-					bean = Akatsuki.deserialize(new MyBean<>(), getIntent().getExtras());
+					MyBean myBean = new MyBean<>();
+					myBean.model = new MyBean.Model(); // or set model as = new ModelParcelable() in MyBean
+					bean = Akatsuki.deserialize(myBean, getIntent().getExtras());
 					textView.setText(bean.retained + " \n" + bean.retainedProtected + " \n" +
 							bean.retainedChild + " \n" +
+							bean.model.name + " \n" +
 							"bean.notRetained:" + bean.notRetained + "\n" +
 							" bean.notRetained_debug:" + bean.notRetained_forDebugging);
 				}
@@ -54,6 +59,7 @@ public class ActivityMain01 extends Activity{
 		bean.retainedProtected = "bean.retainPro from within activity via save";
 		bean.retainedChild = "bean.retainChild from within activity via save";
 		bean.retainedGeneric = "bean.retainGeneric from within activity via save";
+		bean.model.name = "bean.model.name retained from within activity save";
 		textView.setText("saved - rotate to see values from save instead of the deserialize from intent extra");
 	}
 

@@ -6,11 +6,17 @@ import com.sora.util.akatsuki.Retained;
 // showcasing inheritance
 public class MyBean<T extends String> extends RootBean{
 
-	public MyBean(){super();}
-
 	// inheritance works if at least one @Retained field is in child
 	@Retained public String retainedChild = "retained in child";
-	@Retained public T retainedGeneric;
+	@Retained public T     retainedGeneric;
+	@Retained        Model model;
+
+
+	static class Model{
+
+		@Retained String name = "defaultName";
+	}
+
 }
 
 

@@ -31,6 +31,10 @@ dependencies{
 //	Optional parceler support:
 	compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'
 
+//  Testing interoperability with ParcelablePlease
+	compile 'com.hannesdorfmann.parcelableplease:annotation:1.0.1'
+	apt 'com.hannesdorfmann.parcelableplease:processor:1.0.1'
+
 	compile 'com.jakewharton:butterknife:7.0.1'
 
 }

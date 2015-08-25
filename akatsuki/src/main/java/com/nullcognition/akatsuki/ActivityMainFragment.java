@@ -18,17 +18,25 @@ import butterknife.OnClick;
 
 public class ActivityMainFragment extends Fragment{
 
-	@Retained AnnotatedType at;
 
 	@Retained // annotation order does not matter
 	@BindString(R.string.defaultString)
 	String myString;
 
+	@Retained AnnotatedType   at;
+	@Retained ModelParcelable modelParcelable;
+
 	@Bind(R.id.txt_retainedAnnotatedType) TextView txtVRetainedAnnotatedType;
 	@Bind(R.id.txt_retainedField)         TextView txtVRetainedField;
+	@Bind(R.id.txt_modelParcel)           TextView txtVModelParcel;
+
+	@OnClick(R.id.txt_modelParcel) void clickParcel(){
+		modelParcelable.name = "modelParcelable.name will be retained on rotation";
+		txtVModelParcel.setText(modelParcelable.name);
+	}
 
 	@OnClick(R.id.txt_retainedField) void clickField(){
-		myString = "myString field be retained on rotation";
+		myString = "myString field will be retained on rotation";
 		txtVRetainedField.setText(myString);
 	}
 
@@ -42,9 +50,14 @@ public class ActivityMainFragment extends Fragment{
 		bean.retained = "bean.retained via serialization";
 		bean.retainedProtected = "bean.retainedProtected via serialization";
 		bean.retainedChild = "bean.retainedChild via serialization";
+
+		bean.model = new MyBean.Model();
+		bean.model.name = "bean.model.name via serialization";
+
 		bean.notRetained = 1;
 		bean.notRetained_forDebugging = 2;
 		Bundle bundle = Akatsuki.serialize(bean);
+
 
 		Intent i = new Intent(getActivity(), ActivityMain01.class);
 		i.putExtras(bundle);
@@ -57,10 +70,13 @@ public class ActivityMainFragment extends Fragment{
 
 		ButterKnife.bind(this, rootView); // binding and restoration order matters
 		at = new AnnotatedType();
+		modelParcelable = new ModelParcelable();
 		Akatsuki.restore(this, savedInstanceState);
 
+		txtVModelParcel.setText(modelParcelable.name);
 		txtVRetainedAnnotatedType.setText(at.string);
 		txtVRetainedField.setText(myString);
+
 		return rootView;
 	}
 
