@@ -24,8 +24,8 @@ android{
 dependencies{
 	compile fileTree(dir: 'libs', include: ['*.jar'])
 
-	compile 'com.sora.util.akatsuki:akatsuki-api:0.0.1'
-	 apt 'com.sora.util.akatsuki:akatsuki-compiler:0.0.1'
+	compile 'com.sora.util.akatsuki:akatsuki-api:0.0.2'
+	 apt 'com.sora.util.akatsuki:akatsuki-compiler:0.0.2'
 
 
 //	Optional parceler support:

@@ -44,4 +44,12 @@
 		android:layout_below = "@+id/btn_passValueToActivity" android:layout_alignParentStart = "true"
 		/>
 
+	<TextView
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:text = "New Text"
+		android:id = "@+id/txt_customType"
+		android:layout_below = "@+id/txt_modelParcel" android:layout_alignParentStart = "true"
+		/>
+
 </RelativeLayout>
