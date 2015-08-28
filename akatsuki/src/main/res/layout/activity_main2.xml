@@ -1,0 +1,79 @@
+<RelativeLayout xmlns:android = "http://schemas.android.com/apk/res/android"
+                xmlns:tools = "http://schemas.android.com/tools"
+                android:layout_width = "match_parent"
+                android:layout_height = "match_parent"
+                android:paddingLeft = "@dimen/activity_horizontal_margin"
+                android:paddingRight = "@dimen/activity_horizontal_margin"
+                android:paddingTop = "@dimen/activity_vertical_margin"
+                android:paddingBottom = "@dimen/activity_vertical_margin"
+                tools:context = "com.nullcognition.akatsuki.v0_0_3.ActivityMain2">
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "myInt"
+        android:id = "@+id/TextView_myInt"
+        android:layout_below = "@+id/TextView_instuc_retain" android:layout_alignParentStart = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "@string/myString"
+        android:id = "@+id/TextView_myString"
+        android:layout_alignParentStart = "true"
+        android:layout_below = "@+id/TextView_myInt" android:layout_alignParentLeft = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "bip.myString"
+        android:id = "@+id/TextView_bip_myString"
+        android:layout_alignParentStart = "true"
+        android:layout_below = "@+id/TextView_myString" android:layout_alignParentLeft = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "bip.myInt"
+        android:id = "@+id/TextView_bip_myInt"
+        android:layout_alignParentStart = "true"
+        android:layout_below = "@+id/TextView_bip_myString" android:layout_alignParentLeft = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:textAppearance = "?android:attr/textAppearanceMedium"
+        android:text = "Click on a textview to retain, then rotate device"
+        android:id = "@+id/TextView_instuc_retain"
+        android:layout_alignParentTop = "true" android:layout_alignParentStart = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "bi.beanString"
+        android:id = "@+id/TextView_bi_beanString"
+        android:layout_below = "@+id/TextView_bip_myInt" android:layout_alignParentStart = "true"
+        />
+
+    <TextView
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "bwg.myType"
+        android:id = "@+id/TextView_bwg_myType"
+        android:layout_below = "@+id/Button_bwg" android:layout_alignParentStart = "true"
+        />
+
+    <Button
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:text = "Retain Bwg"
+        android:id = "@+id/Button_bwg"
+        android:layout_below = "@+id/TextView_bi_beanString" android:layout_alignParentStart = "true"
+        />
+
+</RelativeLayout>

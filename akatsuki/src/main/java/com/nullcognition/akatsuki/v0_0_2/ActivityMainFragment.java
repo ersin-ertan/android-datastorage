@@ -1,4 +1,4 @@
-package com.nullcognition.akatsuki;
+package com.nullcognition.akatsuki.v0_0_2;
 
 import android.app.Fragment;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.nullcognition.akatsuki.R;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 

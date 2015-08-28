@@ -1,9 +1,10 @@
-package com.nullcognition.akatsuki;
+package com.nullcognition.akatsuki.v0_0_2;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.nullcognition.akatsuki.R;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Retained;
 
