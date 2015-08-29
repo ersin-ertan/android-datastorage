@@ -114,20 +114,4 @@ public class ActivityMain2 extends Activity{
 		textViewBpinMyString.setText(bpin.myString + " " + bpin.myStringRoot);
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu){
-		getMenuInflater().inflate(R.menu.activity_main2, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item){
-		int id = item.getItemId();
-
-		if(id == R.id.action_settings){
-			return true;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
 }
