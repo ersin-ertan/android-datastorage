@@ -11,7 +11,7 @@ import com.sora.util.akatsuki.Retained;
 @ParcelablePlease
 public class BeanInheritedParcelable extends BIPRoot implements Parcelable{
 
-	@Retained String myString = "BIP.myString";
+	String myString = "binp.myString";
 
 	@Override public int describeContents(){ return 0; }
 	@Override public void writeToParcel(Parcel dest, int flags){BeanInheritedParcelableParcelablePlease.writeToParcel(this, dest, flags);}
@@ -28,5 +28,5 @@ public class BeanInheritedParcelable extends BIPRoot implements Parcelable{
 
 class BIPRoot{
 
-	@Retained String myString = "BIPRoot.myString";
+	@Retained String myStringRoot = "binpRoot.myString";
 }

@@ -8,16 +8,16 @@ import android.os.Parcelable;
 import com.hannesdorfmann.parcelableplease.annotation.ParcelablePlease;
 import com.sora.util.akatsuki.Retained;
 
-public class BeanParcelableInherited{
+public class BeanParcelableInherited extends BPIRoot{
 
-	@Retained String myString = "BPI.myString default";
+	@Retained String myString = "Bpin.myString default";
 }
 
 
 @ParcelablePlease
 class BPIRoot implements Parcelable{
 
-	String myString = "BPIRoot.myString default";
+	String myStringRoot = "BpinRoot.myString default";
 
 	@Override public int describeContents(){ return 0; }
 	@Override public void writeToParcel(Parcel dest, int flags){BPIRootParcelablePlease.writeToParcel(this, dest, flags);}

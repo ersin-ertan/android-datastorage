@@ -39,6 +39,8 @@ public class ActivityMain2 extends Activity{
 		setText(textViewBipMyInt, String.valueOf(bip.myInt));
 		setText(textViewBiMyString, bi.beanString + " " + bi.beanRootString);
 		setText(textViewBwgMyType, bwg.myType);
+		setText(textViewBinpMyString, binp.myString + " " + binp.myStringRoot);
+		setText(textViewBpinMyString, bpin.myString + " " + bpin.myStringRoot);
 	}
 
 
@@ -90,10 +92,26 @@ public class ActivityMain2 extends Activity{
 
 	@Bind(R.id.TextView_bwg_myType) TextView textViewBwgMyType;
 	@Retained BeanWithGeneric<String> bwg = new BeanWithGeneric<>();
-// does not the the text view as the onclick listener, see BeanWithGeneric class
+	// does not the the text view as the onclick listener, see BeanWithGeneric class
 	@OnClick(R.id.Button_bwg) void bwg_myType(){
 		bwg.myType = "bwg.myType retained";
 		textViewBwgMyType.setText(bwg.myType);
+	}
+
+	@Bind(R.id.TextView_binp_myString) TextView textViewBinpMyString;
+	@Retained BeanInheritedParcelable binp = new BeanInheritedParcelable();
+	@OnClick(R.id.TextView_binp_myString) void _binp_myString(){
+		binp.myString = "binp.myString retained";
+		binp.myStringRoot = "binp.myStringRoot retained";
+		textViewBinpMyString.setText(binp.myString + " " + binp.myStringRoot);
+	}
+
+	@Bind(R.id.TextView_bpin_myString) TextView textViewBpinMyString;
+	@Retained BeanParcelableInherited bpin = new BeanParcelableInherited();
+	@OnClick(R.id.TextView_bpin_myString) void _bpin_myString(){
+		bpin.myString = "bpin.myString retained";
+		bpin.myStringRoot = "bpin.myStringRoot retained";
+		textViewBpinMyString.setText(bpin.myString + " " + bpin.myStringRoot);
 	}
 
 	@Override
