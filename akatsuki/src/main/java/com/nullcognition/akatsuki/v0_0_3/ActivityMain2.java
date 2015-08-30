@@ -43,7 +43,6 @@ public class ActivityMain2 extends Activity{
 		setText(textViewBpinMyString, bpin.myString + " " + bpin.myStringRoot);
 	}
 
-
 	@Override protected void onSaveInstanceState(final Bundle outState){
 		super.onSaveInstanceState(outState);
 		Akatsuki.save(this, outState);
