@@ -1,1 +1,1 @@
-include ':app', ':akatsuki'
+include ':app', ':akatsuki', ':sample', ':retain-state', ':simplefragment'

@@ -7,4 +7,7 @@
 	<string name = "title_activity_parcel">ParcelActivity</string>
 	<string name = "title_activity_activity_main2">ActivityMain2</string>>
 	<string name = "myString">myString default</string>
+
+	<string name = "title_activity_activity_cross_lib">ActivityCrossLib</string>
+	<string name = "clickMe">Click Me</string>
 </resources>

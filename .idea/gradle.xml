@@ -11,6 +11,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/akatsuki" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/retain-state" />
+            <option value="$PROJECT_DIR$/sample" />
+            <option value="$PROJECT_DIR$/simplefragment" />
           </set>
         </option>
       </GradleProjectSettings>

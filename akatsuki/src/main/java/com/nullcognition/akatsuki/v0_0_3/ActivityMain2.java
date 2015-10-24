@@ -97,6 +97,9 @@ public class ActivityMain2 extends Activity{
 		textViewBwgMyType.setText(bwg.myType);
 	}
 
+
+	// should not mix pracelables with @Retained
+
 	@Bind(R.id.TextView_binp_myString) TextView textViewBinpMyString;
 	@Retained BeanInheritedParcelable binp = new BeanInheritedParcelable();
 	@OnClick(R.id.TextView_binp_myString) void _binp_myString(){
