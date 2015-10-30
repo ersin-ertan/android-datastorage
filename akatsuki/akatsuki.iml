@@ -95,8 +95,8 @@
     <orderEntry type="library" exported="" name="appcompat-v7-22.1.0" level="project" />
     <orderEntry type="library" exported="" name="annotation-2.1.1" level="project" />
     <orderEntry type="library" exported="" name="annotation-1.0.1" level="project" />
-    <orderEntry type="library" exported="" name="akatsuki-api-d0d747f513" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.1.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.1.0" level="project" />
+    <orderEntry type="library" exported="" name="akatsuki-api-96cce6a313" level="project" />
   </component>
 </module>

@@ -29,8 +29,8 @@ dependencies{
 //	compile 'com.sora.util.akatsuki:akatsuki-api:0.0.3'
 //	 apt 'com.sora.util.akatsuki:akatsuki-compiler:0.0.3'
 
-	compile 'com.github.tom91136.akatsuki:akatsuki-api:d0d747f513'
-	apt 'com.github.tom91136.akatsuki:akatsuki-compiler:d0d747f513'
+	compile 'com.github.tom91136.akatsuki:akatsuki-api:96cce6a313'
+	apt 'com.github.tom91136.akatsuki:akatsuki-compiler:96cce6a313'
 
 //	Optional parceler support:
 //	compile 'com.sora.util.akatsuki:akatsuki-parceler:0.0.1@aar'

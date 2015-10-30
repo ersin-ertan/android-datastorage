@@ -8,6 +8,7 @@ import android.widget.Toast;
 import com.nullcognition.akatsuki.R;
 import com.sora.util.akatsuki.Akatsuki;
 import com.sora.util.akatsuki.Arg;
+import com.sora.util.akatsuki.Retained;
 
 public class Main3Activity extends Activity{
 
@@ -21,7 +22,7 @@ public class Main3Activity extends Activity{
 			MyFrag f = Builders.MyFrag().s("s").build(this);
 			getFragmentManager().beginTransaction().add(f, "f").commit();
 		}
-//		Builders.Main4Activity().s(null).startActivity(this);
+		Builders.Main4Activity().s("NextActivity").startActivity(this);
 	}
 
 	// static nest does not work with arg but top level does
@@ -30,7 +31,7 @@ public class Main3Activity extends Activity{
 
 		public MyFrag(){}
 
-		@Arg String s;
+		@Retained @Arg String s;
 
 		@Override public void onCreate(final Bundle savedInstanceState){
 			super.onCreate(savedInstanceState);
@@ -41,6 +42,7 @@ public class Main3Activity extends Activity{
 			}
 			else{
 				Toast.makeText(this.getActivity(), "Arguments value is: " + getArguments().getString("s"), Toast.LENGTH_SHORT).show();
+				s = "retained";
 
 			}
 		}
