@@ -6,12 +6,13 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.nullcognition.storio.content_resolver.table.CRModelTable;
 import com.nullcognition.storio.sqlite.table.ModelTable;
 
 public class DbOpenHelper extends SQLiteOpenHelper{
 
 	public static final String DATABASE = "database";
-	public static final int VERSION = 1;
+	public static final int    VERSION  = 1; // 2 due to the addition of the cr table
 
 	public DbOpenHelper(final Context context){
 		super(context, DATABASE, null, VERSION);
@@ -19,7 +20,8 @@ public class DbOpenHelper extends SQLiteOpenHelper{
 
 	@Override public void onCreate(final SQLiteDatabase db){
 		db.execSQL(ModelTable.getCreateTableQuery());
+		db.execSQL(CRModelTable.getCreateTableQuery());
 	}
 
-	@Override public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion){}
+	@Override public void onUpgrade(final SQLiteDatabase db, final int oldVersion, final int newVersion){ }
 }

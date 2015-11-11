@@ -8,4 +8,5 @@
 		<item>Delete</item>
 	</string-array>
 
+	<string name= "content_authority">com.nullcognition.android-datastorage.storio</string>
 </resources>
