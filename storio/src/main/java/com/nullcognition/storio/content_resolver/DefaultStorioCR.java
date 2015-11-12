@@ -48,7 +48,7 @@ public class DefaultStorioCR{
 			return UpdateQuery.builder()
 					.uri(CONTENT_URI) // "content://some_uri"
 					.where(CRModelTable.COLUMN_ID + " = ?") // "some_column = ?"
-					.whereArgs(crModel.content())
+					.whereArgs(crModel.id())
 					.build();
 		}
 
