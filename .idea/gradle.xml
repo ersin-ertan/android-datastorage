@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/akatsuki" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/realm" />
             <option value="$PROJECT_DIR$/retain-state" />
             <option value="$PROJECT_DIR$/sample" />
             <option value="$PROJECT_DIR$/simplefragment" />
@@ -19,19 +20,7 @@
             <option value="$PROJECT_DIR$/storiopract00" />
           </set>
         </option>
-        <option name="myModules">
-          <set>
-            <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/akatsuki" />
-            <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/retain-state" />
-            <option value="$PROJECT_DIR$/sample" />
-            <option value="$PROJECT_DIR$/simplefragment" />
-            <option value="$PROJECT_DIR$/sqldelight" />
-            <option value="$PROJECT_DIR$/storio" />
-            <option value="$PROJECT_DIR$/storiopract00" />
-          </set>
-        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
       </GradleProjectSettings>
     </option>
   </component>

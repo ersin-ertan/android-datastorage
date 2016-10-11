@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/akatsuki/akatsuki.iml" filepath="$PROJECT_DIR$/akatsuki/akatsuki.iml" />
       <module fileurl="file://$PROJECT_DIR$/android-datastorage.iml" filepath="$PROJECT_DIR$/android-datastorage.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realm/realm.iml" filepath="$PROJECT_DIR$/realm/realm.iml" />
       <module fileurl="file://$PROJECT_DIR$/retain-state/retain-state.iml" filepath="$PROJECT_DIR$/retain-state/retain-state.iml" />
       <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/simplefragment/simplefragment.iml" filepath="$PROJECT_DIR$/simplefragment/simplefragment.iml" />
