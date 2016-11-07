@@ -1,16 +1,14 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
-apply plugin: 'realm-android'
-
 android {
-  compileSdkVersion 24
-  buildToolsVersion "24.0.2"
+  compileSdkVersion 25
+  buildToolsVersion "25.0.0"
 
   defaultConfig {
-    applicationId "com.nullcognition.android.realm"
-    minSdkVersion 21
-    targetSdkVersion 24
+    applicationId "com.nullcognition.requery"
+    minSdkVersion 18
+    targetSdkVersion 25
     versionCode 1
     versionName "1.0"
 
@@ -22,13 +20,25 @@ android {
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
     }
   }
+
+  dataBinding {
+    enabled = true
+  }
 }
 
 dependencies {
   compile fileTree(dir: 'libs', include: ['*.jar'])
+  compile 'com.android.support:recyclerview-v7:25.0.0'
   androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
     exclude group: 'com.android.support', module: 'support-annotations'
   })
-  compile 'com.android.support:appcompat-v7:24.2.1'
+  compile 'com.android.support:appcompat-v7:25.0.0'
   testCompile 'junit:junit:4.12'
+
+  compile "io.reactivex:rxjava:1.2.2"
+  compile 'io.reactivex:rxandroid:1.2.1'
+
+  compile 'io.requery:requery:1.0.1'
+  compile 'io.requery:requery-android:1.0.1' // for android
+  apt 'io.requery:requery-processor:1.0.1' // use an APT plugin
 }

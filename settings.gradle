@@ -1,2 +1,2 @@
-include ':app', ':akatsuki', ':sample', ':retain-state', ':simplefragment', ':storio',
+include ':app', ':akatsuki', ':sample', ':retain-state', ':simplefragment', ':storio', ':requery',
     ':storiopract00', ':sqldelight', ':realm'
